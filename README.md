@@ -158,3 +158,4 @@ nos snippets `gtag.js` no `<head>` de `src/index.html`, `src/_includes/base.njk`
 
 - O **ano** no rodapé é atualizado automaticamente por JavaScript.
 - O site funciona mesmo sem JavaScript (o menu vira links empilhados).
+
