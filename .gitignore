@@ -1,0 +1,7 @@
+# Node / build do Eleventy
+node_modules/
+_site/
+
+# Sistema
+Thumbs.db
+.DS_Store
