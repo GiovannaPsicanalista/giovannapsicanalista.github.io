@@ -1,10 +1,12 @@
 ---
-title: "Adolescência: escutar o que ainda não tem palavra"
+title: 'Adolescência: escutar o que ainda não tem palavra'
 date: 2026-06-30
-description: "Uma reflexão sobre a adolescência, suas transformações e a importância de um espaço próprio de escuta para aquilo que ainda não encontrou palavras."
-resumo: "Um olhar sobre as transformações dessa fase e a importância de um espaço próprio."
-tempoLeitura: "4 min"
+description: Uma reflexão sobre a adolescência, suas transformações e a importância de um espaço próprio de escuta para aquilo que ainda não encontrou palavras.
+resumo: Um olhar sobre as transformações dessa fase e a importância de um espaço próprio.
+tempoLeitura: 4 min
+coverAlt: ''
 ---
+
 A adolescência costuma ser descrita de fora: pelas mudanças no corpo, pelas oscilações de humor, pelos conflitos com a família. Vista assim, parece uma fase a ser atravessada o mais rápido possível. Mas, por dentro, ela é algo bem mais delicado — um tempo de transformação profunda, em que muita coisa se move ao mesmo tempo e nem tudo encontra, de imediato, palavras para ser dito.
 
 O adolescente vive uma espécie de reconstrução. A criança que ele foi já não responde a tudo, e o adulto que será ainda está em formação. Nesse intervalo, surgem perguntas grandes: quem sou eu? a que pertenço? o que sinto de verdade? Nem sempre essas perguntas aparecem com clareza. Muitas vezes elas se manifestam por meio de irritação, de silêncio, de retraimento ou de gestos que os adultos têm dificuldade de compreender.
@@ -21,4 +23,4 @@ O trabalho psicanalítico com adolescentes respeita o tempo de cada um. Não se 
 
 Para as famílias, é importante lembrar: buscar ajuda não significa que algo deu errado. Significa reconhecer que esse momento merece um cuidado à altura de sua importância — e que escutar é, muitas vezes, o gesto mais transformador que se pode oferecer.
 
-*Este texto tem caráter reflexivo e não substitui uma avaliação individual. Cada adolescente e cada família têm sua própria história.*
+_Este texto tem caráter reflexivo e não substitui uma avaliação individual. Cada adolescente e cada família têm sua própria história._
