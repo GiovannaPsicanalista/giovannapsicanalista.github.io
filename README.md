@@ -1,7 +1,7 @@
 # Giovanna Gimenez · Psicanálise Clínica — Site
 
 Site institucional estático (HTML + CSS + JavaScript vanilla) publicado no **GitHub Pages**
-em **https://giovannagimenez98.github.io/**. A **home** é HTML estático; o **blog ("Reflexões")**
+em **https://giovannapsicanalista.github.io/**. A **home** é HTML estático; o **blog ("Reflexões")**
 é gerado pelo **Eleventy** a partir de Markdown e pode ser alimentado por um **painel visual
 (Sveltia CMS)** — ver abaixo.
 
@@ -12,7 +12,7 @@ em **https://giovannagimenez98.github.io/**. A **home** é HTML estático; o **b
 
 ## 📝 Painel do blog (para quem escreve, sem código)
 
-Acesse **`https://giovannagimenez98.github.io/admin/`**, faça login e crie/edite/exclua posts
+Acesse **`https://giovannapsicanalista.github.io/admin/`**, faça login e crie/edite/exclua posts
 com fotos, pela interface. Ao publicar, o GitHub Actions gera o site e publica em ~1–2 min.
 
 > A configuração do painel fica em `src/admin/config.yml` (já aponta para este repositório).
@@ -43,8 +43,8 @@ _site/                         → Saída gerada (não versionada)
 
 ## 🚀 Publicação (GitHub Pages)
 
-Este repositório é o **site de usuária** `giovannagimenez98.github.io`, servido na **raiz**
-`https://giovannagimenez98.github.io/`.
+Este repositório é o **site de usuária** `giovannapsicanalista.github.io`, servido na **raiz**
+`https://giovannapsicanalista.github.io/`.
 
 1. Em **Settings → Pages → Build and deployment → Source**, escolha **GitHub Actions**.
 2. A cada `push` na `main`, o site é publicado automaticamente pelo workflow
