@@ -23,7 +23,6 @@ Muitas pessoas recorrem exclusivamente aos medicamentos na busca por uma soluç�
 
 ![](/assets/images/posts/image_d0ba7a97.png)
 
-
 **Por que buscar um espaço de escuta psicanalítica?**
 
 É nesse cenário que a psicanálise se faz necessária. Na clínica, a depressão não é vista apenas como um desequilíbrio químico ou um rótulo definitivo, mas sim como uma posição do sujeito diante do seu próprio desejo e de sua história. O consultório oferece um espaço de escuta seguro, ético e confidencial, livre de julgamentos ou de conselhos prontos. Na análise, você tem a oportunidade de:
