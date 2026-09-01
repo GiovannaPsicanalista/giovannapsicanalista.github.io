@@ -2,7 +2,7 @@
 title: O Vazio da Depressão e a Importância de um Espaço de Escuta Próprio
 date: 2026-09-01
 description: Sentindo o peso e o vazio da depressão? Entenda por que desabafos e remédios às vezes não bastam e como a escuta psicanalítica pode te ajudar. Acesse.
-resumo: 'A depressão muitas vezes se manifesta de forma sutil através de uma paralisia para tarefas básicas do cotidiano, sendo frequentemente confundida com preguiça por quem está de fora. Desabafar com familiares e amigos ou recorrer unicamente a medicamentos são medidas que costumam falhar em preencher o vazio emocional, pois não alcançam a raiz do sofrimento subjetivo. É por isso que se faz fundamental buscar um espaço de escuta psicanalítica profissional: um lugar seguro, ético e sem julgamentos onde a dor de cada pessoa possa encontrar palavras, ser verdadeiramente acolhida e transformada no seu próprio tempo.'
+resumo: A depressão paralisa o cotidiano e gera um vazio que desabafos e remédios nem sempre conseguem preencher, tornando fundamental um espaço de escuta psicanalítica seguro para acolher e transformar essa dor no seu próprio tempo.
 tempoLeitura: '5'
 cover: ''
 coverAlt: ''
