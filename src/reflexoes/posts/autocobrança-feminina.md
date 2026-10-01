@@ -2,7 +2,7 @@
 title: 'Autocobrança feminina: quando nada parece suficiente'
 date: 2026-10-01
 description: Entenda a autocobrança feminina, a sensação de nunca fazer o suficiente e a culpa por descansar. Uma reflexão psicanalítica sobre ansiedade, exigência e vida feminina.
-resumo: Quando nada parece suficiente. Uma reflexão sobre autocobrança feminina, culpa, ansiedade e a necessidade de dar conta de tudo.
+resumo: Uma reflexão sobre autocobrança feminina, culpa, ansiedade e a necessidade de dar conta de tudo.
 tempoLeitura: 6 min
 cover: ''
 coverAlt: ''
