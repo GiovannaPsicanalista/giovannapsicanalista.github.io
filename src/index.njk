@@ -1,3 +1,9 @@
+---
+# A home é um template (Nunjucks) apenas para montar os cards de "Reflexões" a partir dos posts.
+# Todo o resto do arquivo é HTML comum — edite normalmente. Só evite digitar chaves duplas ou
+# chave seguida de % ou # (sintaxe do Nunjucks) fora do bloco REFLEXOES_CARDS.
+permalink: /index.html
+---
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -421,24 +427,17 @@
           <!-- REFLEXOES_APOIO:fim -->
         </div>
 
-        <!-- REFLEXOES_CARD_N: 3 cards apontando para posts publicados. Estes cards NÃO se
-             atualizam sozinhos: se um post for apagado ou renomeado no painel, ajuste aqui. -->
+        <!-- REFLEXOES_CARDS: gerados automaticamente — os 3 posts publicados mais recentes,
+             na mesma ordem da página Reflexões. Não é preciso editar aqui ao publicar,
+             renomear ou apagar um post no painel. -->
         <div class="reflexoes__cards">
-          <article class="post-card reveal">
-            <h3>Autocobrança feminina: quando nada parece suficiente</h3>
-            <p>Uma reflexão sobre autocobrança feminina, culpa, ansiedade e a necessidade de dar conta de tudo.</p>
-            <a class="link-texto" href="reflexoes/posts/autocobran%C3%A7a-feminina.html">Leia mais</a>
+          {%- for post in collections.posts.slice(0, 3) %}
+          <article class="post-card reveal{% if loop.index > 1 %} reveal--{{ loop.index }}{% endif %}">
+            <h3>{{ post.data.title }}</h3>
+            <p>{{ post.data.resumo or post.data.description }}</p>
+            <a class="link-texto" href="reflexoes/posts/{{ post.fileSlug | urlencode }}.html">Leia mais</a>
           </article>
-          <article class="post-card reveal reveal--2">
-            <h3>Ansiedade: quando tudo parece urgente</h3>
-            <p>Sobre o tempo acelerado de dentro e o que a escuta pode oferecer a ele.</p>
-            <a class="link-texto" href="reflexoes/posts/ansiedade-quando-tudo-parece-urgente.html">Leia mais</a>
-          </article>
-          <article class="post-card reveal reveal--3">
-            <h3>Autoestima e o valor que atribuímos a nós</h3>
-            <p>Por que repetimos certas relações e como isso fala da imagem que temos de nós.</p>
-            <a class="link-texto" href="reflexoes/posts/autoestima-e-o-valor-que-atribuimos-a-nos.html">Leia mais</a>
-          </article>
+          {%- endfor %}
         </div>
 
         <div class="centro">

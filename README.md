@@ -26,7 +26,7 @@ com fotos, pela interface. Ao publicar, o GitHub Actions gera o site e publica e
 
 ```
 src/                          → FONTE do site (Eleventy gera _site/)
-  index.html                  → Página inicial (estática, todas as seções)
+  index.njk                   → Página inicial (todas as seções; os cards de Reflexões vêm dos posts)
   404.html
   _includes/base.njk          → Modelo comum (head, cabeçalho e rodapé do blog e das páginas)
   _includes/post.njk          → Layout do artigo do blog
@@ -62,7 +62,8 @@ Este repositório é o **site de usuária** `giovannapsicanalista.github.io`, se
 
 ## ✏️ Como editar os textos
 
-Todos os textos editáveis da home estão marcados por comentários no `src/index.html`, por exemplo:
+Todos os textos editáveis da home estão marcados por comentários no `src/index.njk` (é um
+arquivo HTML comum; a extensão `.njk` existe só para os cards de Reflexões), por exemplo:
 
 ```html
 <!-- FRASE_HERO:início -->
@@ -82,18 +83,18 @@ Basta alterar o texto **entre** os comentários. Principais marcadores:
   nenhuma linha fica incompleta (9, 12 ou 15 itens fecham certinho).
 - **Adicionar/remover uma questão em "Para quem é a psicanálise?":** copie um bloco
   `<div class="questao">...</div>` (título em `<dt>`, descrição em `<dd>`).
-- **Cards de "Reflexões" na home:** os 3 cards são fixos no `src/index.html` e **não** acompanham
-  o painel. Se um post for apagado ou renomeado, atualize o card correspondente (título, resumo
-  e link) para não deixar link quebrado.
+- **Cards de "Reflexões" na home:** são montados sozinhos com os 3 posts publicados mais
+  recentes (título, resumo e link). Publicar, renomear ou apagar um post no painel atualiza a
+  home na publicação seguinte — não é preciso editar nada.
 
 ---
 
 ## 📞 Dados de contato e agendamento
 
 Os canais já estão preenchidos com os dados reais (WhatsApp, e-mail e Instagram), na seção de
-contato e no rodapé do `src/index.html` (e nos metadados JSON-LD). O botão **"Agendar"** aponta
+contato e no rodapé do `src/index.njk` (e nos metadados JSON-LD). O botão **"Agendar"** aponta
 para o link oficial de agendamento. Para trocar qualquer um, faça "localizar e substituir" em
-`src/index.html` **e** em `src/_includes/base.njk` (rodapé do blog e das páginas institucionais):
+`src/index.njk` **e** em `src/_includes/base.njk` (rodapé do blog e das páginas institucionais):
 
 | Dado | Onde aparece |
 |------|--------------|
@@ -153,10 +154,10 @@ e **Lato** (texto).
 (`monograma.png` no cabeçalho). Os favicons/ícones em `src/assets/icons/` são derivados do
 monograma. Tagline: *"escuta que acolhe, presença que transforma."*
 
-> ⚡ **Nota de performance (home):** por velocidade, o `src/index.html` tem um pequeno bloco de
+> ⚡ **Nota de performance (home):** por velocidade, o `src/index.njk` tem um pequeno bloco de
 > **CSS crítico embutido** no `<head>` (um subconjunto de `styles.css` para o topo da página),
 > e a folha completa carrega de forma assíncrona. Se mudar **cores, cabeçalho ou o hero** em
-> `styles.css`, ajuste também esse bloco embutido no `index.html` (há um comentário no local).
+> `styles.css`, ajuste também esse bloco embutido no `index.njk` (há um comentário no local).
 > As demais páginas não têm esse bloco — nelas basta editar o `styles.css`.
 
 ---
@@ -176,7 +177,7 @@ npm run dev       # servidor local (recarrega ao salvar)
 ## 📊 Analytics
 
 O site inclui **Google Analytics (GA4)** em todas as páginas. O identificador de medição fica
-nos snippets `gtag.js` no `<head>` de `src/index.html`, `src/_includes/base.njk` e `src/404.html`.
+nos snippets `gtag.js` no `<head>` de `src/index.njk`, `src/_includes/base.njk` e `src/404.html`.
 
 ---
 

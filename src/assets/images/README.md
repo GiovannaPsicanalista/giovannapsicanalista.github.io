@@ -8,7 +8,7 @@ seção **"Sobre mim"** usa o retrato da Giovanna (`giovanna-sobre.jpg`/`.webp`)
 
 1. Coloque a foto nesta pasta como `giovanna-hero.jpg` (e, se quiser, a versão otimizada
    `giovanna-hero.webp`) — o mesmo vale para `giovanna-sobre.jpg`/`.webp`.
-2. No arquivo `index.html`, localize o bloco `<picture>` correspondente (há um comentário
+2. No arquivo `src/index.njk`, localize o bloco `<picture>` correspondente (há um comentário
    logo acima explicando) e troque as duas linhas que apontam para o `.svg` pelas versões
    `.jpg`/`.webp` já indicadas no comentário. É uma troca de duas linhas por seção.
 
