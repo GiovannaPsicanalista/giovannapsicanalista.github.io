@@ -1,0 +1,35 @@
+---
+layout: base.njk
+---
+    <section class="blog-hero">
+      <div class="container">
+        <span class="selo">{{ selo or "Psicanálise clínica" }}</span>
+        <h1>{{ title }}</h1>
+        {% if subtitulo %}<p class="apoio">{{ subtitulo }}</p>{% endif %}
+      </div>
+    </section>
+
+    <article class="artigo">
+      <div class="artigo__wrap">
+        <div class="artigo__corpo">
+{{ content | safe }}
+        </div>
+
+        <div class="artigo__cta">
+          <h2>Vamos conversar?</h2>
+          <p>Se sentir que é a hora, estou aqui para oferecer um espaço de escuta e acolhimento, no seu tempo.</p>
+          <a class="btn btn--primario" href="https://corpora.bio/2d251bdb0e" target="_blank" rel="noopener">Agendar sua primeira conversa</a>
+        </div>
+
+        <nav class="veja-tambem" aria-label="Veja também">
+          <h2 class="veja-tambem__titulo">Veja também</h2>
+          <ul class="veja-tambem__lista">
+            {%- for p in collections.paginas %}{% if p.url != page.url %}
+            <li><a class="link-texto" href="{{ root }}{{ p.fileSlug }}/">{{ p.data.title }}</a></li>
+            {%- endif %}{% endfor %}
+            <li><a class="link-texto" href="{{ root }}index.html#para-quem">Para quem é a psicanálise?</a></li>
+            <li><a class="link-texto" href="{{ root }}index.html#faq">Perguntas frequentes</a></li>
+          </ul>
+        </nav>
+      </div>
+    </article>

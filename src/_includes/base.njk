@@ -110,8 +110,39 @@
 
   <footer class="rodape">
     <div class="container">
-      <p class="rodape__frase">A psicanálise não oferece respostas prontas. Ela abre espaço para que você se escute de verdade.</p>
-      <p class="rodape__copy">© <span data-ano>2026</span> Giovanna Gimenez · Psicanálise Clínica.</p>
+      <div class="rodape__grid">
+        <div>
+          <p class="rodape__logo">Giovanna Gimenez | Psicanalista</p>
+          <p>Psicanálise online para mulheres adultas.</p>
+          <p>São Paulo — SP | Atendimento online para todo o Brasil.</p>
+          <p class="rodape__tagline">escuta que acolhe, presença que transforma.</p>
+        </div>
+        <nav aria-label="Navegação do rodapé">
+          <h3>Navegação</h3>
+          <div class="rodape__nav">
+            <a href="{{ root }}index.html#inicio">Início</a>
+            <a href="{{ root }}index.html#sobre">Sobre</a>
+            <a href="{{ root }}index.html#psicanalise">Psicanálise</a>
+            <a href="{{ root }}reflexoes/index.html">Reflexões</a>
+            <a href="{{ root }}index.html#faq">Perguntas Frequentes</a>
+            <a href="{{ root }}index.html#contato">Contato</a>
+            {%- for p in collections.paginas %}
+            <a href="{{ root }}{{ p.fileSlug }}/">{{ p.data.title }}</a>
+            {%- endfor %}
+          </div>
+        </nav>
+        <div>
+          <h3>Contato</h3>
+          <div class="rodape__nav">
+            <a href="https://instagram.com/giovannagimenez.psicanalista" target="_blank" rel="noopener">@giovannagimenez.psicanalista</a>
+            <a href="https://wa.me/5519996504433" target="_blank" rel="noopener">WhatsApp · (19) 99650-4433</a>
+            <a href="mailto:giovannagimenezpsicanalise@gmail.com">giovannagimenezpsicanalise@gmail.com</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="rodape__frase">A psicanálise não oferece respostas prontas. Ela abre espaço para que você possa se escutar de outra maneira.</p>
+      <p class="rodape__copy">© <span data-ano>2026</span> Giovanna Gimenez · Psicanálise Clínica. Todos os direitos reservados.</p>
     </div>
   </footer>
 

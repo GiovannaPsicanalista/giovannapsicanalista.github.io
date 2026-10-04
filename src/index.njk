@@ -1,3 +1,9 @@
+---
+# A home é um template (Nunjucks) apenas para montar os cards de "Reflexões" a partir dos posts.
+# Todo o resto do arquivo é HTML comum — edite normalmente. Só evite digitar chaves duplas ou
+# chave seguida de % ou # (sintaxe do Nunjucks) fora do bloco REFLEXOES_CARDS.
+permalink: /index.html
+---
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -19,22 +25,22 @@
        (GitHub Pages, site-raiz da usuária). Se migrar para domínio próprio, substitua
        a base em todas as páginas, sitemap.xml e robots.txt (ver README.md).
        =================================================================== -->
-  <title>Giovanna Gimenez · Psicanálise Clínica — Atendimento online</title>
-  <meta name="description" content="Giovanna Gimenez, psicanalista clínica. Atendimento online para adolescentes e adultos: um espaço de escuta para compreender emoções, relações e a própria história.">
+  <title>Giovanna Gimenez · Psicanálise online para mulheres</title>
+  <meta name="description" content="Giovanna Gimenez, psicanalista. Atendimento psicanalítico online para mulheres em São Paulo e em todo o Brasil — um espaço de escuta para as questões da vida feminina.">
   <link rel="canonical" href="https://giovannapsicanalista.github.io/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:title" content="Giovanna Gimenez · Psicanálise Clínica">
-  <meta property="og:description" content="Atendimento psicanalítico online para adolescentes e adultos. Um espaço de escuta cuidadosa.">
+  <meta property="og:description" content="Atendimento psicanalítico online para mulheres em São Paulo e em todo o Brasil. Um espaço de escuta cuidadosa.">
   <meta property="og:url" content="https://giovannapsicanalista.github.io/">
   <meta property="og:image" content="https://giovannapsicanalista.github.io/assets/images/og-image.jpg">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Giovanna Gimenez · Psicanálise Clínica">
-  <meta name="twitter:description" content="Atendimento psicanalítico online para adolescentes e adultos.">
+  <meta name="twitter:description" content="Atendimento psicanalítico online para mulheres em São Paulo e em todo o Brasil.">
   <meta name="twitter:image" content="https://giovannapsicanalista.github.io/assets/images/og-image.jpg">
 
   <!-- Favicon / ícones -->
@@ -90,7 +96,7 @@
     .hero__conteudo{position:relative;z-index:2}
     .hero__frase{font-family:var(--fonte-titulo);font-size:clamp(1.6rem,1.15rem + 2.2vw,2.7rem);line-height:1.14;font-weight:600;margin-bottom:1rem;max-width:34rem}
     .hero__nome{font-size:var(--fs-md);margin-bottom:0.25rem;max-width:30rem}.hero__nome strong{color:var(--cor-oliva)}
-    .hero__sub{color:var(--marrom-suave);margin-bottom:1rem;max-width:30rem}.hero__apoio{margin-bottom:1.5rem;max-width:30rem}
+    .hero__sub{color:var(--marrom-suave);margin-bottom:1.5rem;max-width:30rem}
     .hero__ctas{display:flex;flex-wrap:wrap;align-items:center;gap:1.25rem}
     @media (max-width:920px){.hero{min-height:clamp(26rem,72vh,34rem)}.hero__foto{object-position:60% center}.hero::before{background:linear-gradient(to right,var(--cor-creme) 0%,var(--cor-creme) 44%,rgba(246,243,239,0.85) 100%),linear-gradient(to bottom,var(--cor-creme) 0%,rgba(246,243,239,0) 18%,rgba(246,243,239,0) 84%,var(--cor-creme) 100%)}}
     @media (max-width:1024px){.nav__toggle{display:inline-flex}.nav__lista{position:fixed;inset:4.5rem 0 auto 0;flex-direction:column;align-items:flex-start;gap:0;background:var(--cor-creme);border-bottom:var(--borda);box-shadow:var(--sombra);padding:0.5rem 1.5rem 1.5rem;transform:translateY(-120%);transition:transform 260ms ease}.nav[data-aberto="true"] .nav__lista{transform:translateY(0)}.nav__lista li{width:100%;border-bottom:var(--borda)}.nav__lista li:last-child{border-bottom:0}.nav__link{display:block;padding:0.9rem 0}.nav .btn{margin-top:1rem}}
@@ -104,14 +110,18 @@
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Giovanna Gimenez · Psicanálise Clínica",
-    "description": "Atendimento psicanalítico online para adolescentes e adultos.",
+    "description": "Atendimento psicanalítico online para mulheres em São Paulo e em todo o Brasil.",
     "url": "https://giovannapsicanalista.github.io/",
     "image": "https://giovannapsicanalista.github.io/assets/images/og-image.jpg",
-    "areaServed": "BR",
+    "address": { "@type": "PostalAddress", "addressLocality": "São Paulo", "addressRegion": "SP", "addressCountry": "BR" },
+    "areaServed": [
+      { "@type": "City", "name": "São Paulo" },
+      { "@type": "Country", "name": "Brasil" }
+    ],
     "availableLanguage": "pt-BR",
     "telephone": "+55-19-99650-4433",
     "email": "giovannagimenezpsicanalise@gmail.com",
-    "sameAs": ["https://instagram.com/giovannagimenez.psicanalise"],
+    "sameAs": ["https://instagram.com/giovannagimenez.psicanalista"],
     "provider": {
       "@type": "Person",
       "name": "Giovanna Gimenez",
@@ -181,15 +191,13 @@
 
       <div class="container hero__conteudo">
         <!-- FRASE_HERO:início -->
-        <p class="hero__frase">Há histórias que precisam, antes de tudo, encontrar um lugar onde possam ser escutadas.</p>
+        <p class="hero__frase">Um espaço de escuta para compreender as angústias, conflitos, desejos e repetições que atravessam a vida feminina.</p>
         <!-- FRASE_HERO:fim -->
 
         <h1 class="hero__nome"><strong>Giovanna Gimenez</strong> — Psicanalista Clínica</h1>
-        <p class="hero__sub">Atendimento online para adolescentes e adultos.</p>
-
-        <!-- HERO_APOIO:início -->
-        <p class="hero__apoio apoio">Um espaço de escuta para compreender emoções, relações e a própria história.</p>
-        <!-- HERO_APOIO:fim -->
+        <!-- HERO_SUB:início -->
+        <p class="hero__sub">Atendimento psicanalítico online para mulheres em São Paulo e em todo o Brasil.</p>
+        <!-- HERO_SUB:fim -->
 
         <div class="hero__ctas">
           <!-- HERO_CTA_LABEL / AGENDAR_URL (destino: link oficial de agendamento) -->
@@ -205,29 +213,32 @@
       <div class="container">
         <div class="centro reveal">
           <span class="selo">Como funciona</span>
-          <h2>Um cuidado pensado para o seu tempo</h2>
+          <h2>Um espaço pensado para seu autocuidado</h2>
         </div>
         <div class="cards-grid">
           <article class="card reveal">
             <svg class="card__icone" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21c-5-3-8-6-8-11a8 8 0 0 1 16 0c0 5-3 8-8 11Z"/><path d="M12 3c0 6-4 8-4 8"/></svg>
             <h3>Atendimento online</h3>
-            <p>Sessões por vídeo, com conforto e sigilo.</p>
+            <p>Sessões por videochamada, com privacidade e acolhimento, de onde você estiver.</p>
           </article>
           <article class="card reveal reveal--2">
             <svg class="card__icone" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13c4-1 7-4 9-9 1 4 0 7-2 9"/><path d="M3 13c0 4 3 7 7 7 4 0 7-3 8-7"/><path d="M10 20c-1-3-4-5-7-5"/></svg>
-            <h3>Adolescentes e adultos</h3>
-            <p>Um espaço para diferentes momentos da vida.</p>
+            <h3>Para mulheres adultas</h3>
+            <p>Um espaço de escuta voltado às questões que atravessam diferentes momentos da vida feminina.</p>
           </article>
           <article class="card reveal reveal--3">
             <svg class="card__icone" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-8 8H7l-4 3 1.5-5A8 8 0 1 1 21 12Z"/></svg>
             <h3>Escuta psicanalítica</h3>
-            <p>Cada processo é único e respeita o tempo de cada pessoa.</p>
+            <p>Mais do que encontrar respostas prontas, a análise possibilita investigar aquilo que você sente, deseja, repete e ainda não consegue nomear.</p>
           </article>
           <article class="card reveal reveal--4">
             <svg class="card__icone" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.3"/></svg>
             <h3>Sigilo e ética</h3>
-            <p>O atendimento acontece com confidencialidade e respeito.</p>
+            <p>Um espaço pautado pela confidencialidade, pelo respeito e pela ética da prática psicanalítica.</p>
           </article>
+        </div>
+        <div class="centro secao__mais">
+          <a class="link-texto" href="psicanalise-online-para-mulheres/">Saiba mais sobre a psicanálise online para mulheres</a>
         </div>
       </div>
     </section>
@@ -251,6 +262,59 @@
       </div>
     </section>
 
+    <!-- ================== PARA QUEM É A PSICANÁLISE? ================== -->
+    <section class="secao" id="para-quem">
+      <div class="container para-quem__grid">
+        <div class="para-quem__texto reveal">
+          <span class="selo">Para quem é a psicanálise?</span>
+          <!-- PARA_QUEM_TITULO:início -->
+          <h2>Para mulheres que estão tentando compreender o que estão vivendo</h2>
+          <!-- PARA_QUEM_TITULO:fim -->
+          <!-- PARA_QUEM_TEXTO:início -->
+          <p>A vida adulta pode reunir muitas exigências ao mesmo tempo.</p>
+          <p>Trabalho, relacionamentos, maternidade, família, responsabilidades e expectativas podem fazer com que você sinta que precisa estar sempre dando conta de tudo.</p>
+          <p>Às vezes, porém, mesmo quando a vida parece funcionar por fora, alguma coisa continua incomodando por dentro.</p>
+          <p>A psicanálise pode oferecer um espaço para olhar para essas questões com mais cuidado.</p>
+          <!-- PARA_QUEM_TEXTO:fim -->
+          <a class="link-texto" href="psicanalise-para-mulheres-adultas/">Saiba mais sobre a psicanálise para mulheres adultas</a>
+        </div>
+        <div class="reveal reveal--2">
+          <h3 class="para-quem__subtitulo">Algumas questões que podem aparecer no processo:</h3>
+          <!-- PARA_QUEM_QUESTOES: lista repetível — copie um bloco <div class="questao"> para adicionar -->
+          <dl class="questoes">
+            <div class="questao">
+              <dt>Ansiedade e autocobrança</dt>
+              <dd>A sensação de nunca fazer o suficiente, a necessidade de controle e a dificuldade de descansar sem culpa.</dd>
+            </div>
+            <div class="questao">
+              <dt>Vida profissional</dt>
+              <dd>Inseguranças, conflitos no trabalho, medo de fracassar, dificuldade de estabelecer limites e questionamentos sobre carreira e realização.</dd>
+            </div>
+            <div class="questao">
+              <dt>Relacionamentos</dt>
+              <dd>Dificuldade de dizer não, necessidade de agradar, medo de perder o outro e padrões que parecem se repetir.</dd>
+            </div>
+            <div class="questao">
+              <dt>Maternidade e identidade</dt>
+              <dd>As transformações provocadas pela maternidade, a culpa, as expectativas sobre o papel de mãe e a dificuldade de reconhecer a própria identidade para além dele.</dd>
+            </div>
+            <div class="questao">
+              <dt>Culpa e limites</dt>
+              <dd>Quando cuidar de si parece egoísmo ou quando colocar limites desperta medo de decepcionar alguém.</dd>
+            </div>
+            <div class="questao">
+              <dt>Crises e mudanças de vida</dt>
+              <dd>Términos, perdas, mudanças profissionais, maternidade, transições e momentos em que antigas formas de viver deixam de fazer sentido.</dd>
+            </div>
+            <div class="questao">
+              <dt>Tristeza, desânimo e sensação de vazio</dt>
+              <dd>Momentos em que a vida parece perder o sentido ou em que sentimentos difíceis começam a ocupar espaço demais no cotidiano.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
     <!-- ===================== ESSÊNCIA (3 pilares) ===================== -->
     <section class="secao secao--bege essencia">
       <div class="container">
@@ -263,23 +327,23 @@
             <path d="M24 18c0-3-2.3-4.9-5.5-4.9C18.7 16.2 21 18 24 18Z"/>
             <path d="M24 10.5c0-2.6 2-4.3 4.8-4.3C28.6 8.8 26.7 10.5 24 10.5Z"/>
           </svg>
-          <h2>Escuta, compreensão e transformação</h2>
+          <h2>Um espaço para falar sobre aquilo que nem sempre encontra palavras</h2>
         </div>
         <ul class="essencia-grid">
           <li class="pilar reveal">
             <svg class="pilar__icone" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11V8.5A2.5 2.5 0 0 1 7.5 6h9A2.5 2.5 0 0 1 19 8.5V11"/><path d="M4.5 11A1.5 1.5 0 0 0 3 12.5V16h18v-3.5A1.5 1.5 0 0 0 19.5 11a1.5 1.5 0 0 0-1.5 1.5V14H6v-1.5A1.5 1.5 0 0 0 4.5 11Z"/><path d="M6 16v3M18 16v3"/></svg>
             <h3>Escuta</h3>
-            <p>Um espaço seguro e ético para falar sobre o que te habita.</p>
+            <p>Um espaço ético e acolhedor para falar sobre aquilo que você vive, sente e ainda não consegue compreender.</p>
           </li>
           <li class="pilar reveal reveal--2">
             <svg class="pilar__icone" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-9"/><path d="M12 13c0-3.2 2.2-5.3 5.6-5.3C17.4 11 15 13 12 13Z"/><path d="M12 16c0-2.7-2-4.5-5.1-4.5C6.7 14.2 9 16 12 16Z"/></svg>
             <h3>Compreensão</h3>
-            <p>A psicanálise ajuda a dar sentido ao que, muitas vezes, parece sem sentido.</p>
+            <p>A partir da fala, podemos investigar conflitos, desejos, relações e padrões que atravessam sua história.</p>
           </li>
           <li class="pilar reveal reveal--3">
             <svg class="pilar__icone" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18h18"/><path d="M7 18a5 5 0 0 1 10 0"/><path d="M12 5v2.5M4.5 8.5 6 10M19.5 8.5 18 10M2.5 14H5M19 14h2.5"/></svg>
-            <h3>Transformação</h3>
-            <p>Quando você se conhece, novas escolhas se tornam possíveis.</p>
+            <h3>Elaboração</h3>
+            <p>O processo psicanalítico pode abrir espaço para novos sentidos e novas formas de se relacionar consigo mesma e com sua própria história.</p>
           </li>
         </ul>
       </div>
@@ -304,7 +368,10 @@
           <p class="sobre__papel">Psicanalista clínica em constante formação</p>
           <!-- SOBRE_PAPEL:fim -->
           <!-- SOBRE_TEXTO:início -->
-          <p>Acredito na escuta como possibilidade de compreender aquilo que, muitas vezes, ainda não encontrou palavras. Minha prática é fundamentada na ética da psicanálise e busca oferecer um espaço de acolhimento, reflexão e elaboração das experiências de cada sujeito.</p>
+          <p>Acredito na escuta como possibilidade de compreender aquilo que, muitas vezes, ainda não encontrou palavras.</p>
+          <p>Meu trabalho é fundamentado na ética da psicanálise e busca oferecer um espaço de acolhimento, reflexão e elaboração das experiências de cada mulher.</p>
+          <p>Tenho especial interesse pelas questões que atravessam a experiência feminina na vida contemporânea: a autocobrança, a ansiedade, os relacionamentos, a maternidade, a vida profissional, a culpa, os limites, a identidade e a busca por corresponder às expectativas de outras pessoas.</p>
+          <p>Minha proposta é construir um espaço em que você possa falar sobre sua história sem precisar chegar com respostas prontas — e sem precisar ser apenas aquilo que esperam de você.</p>
           <!-- SOBRE_TEXTO:fim -->
 
           <h3 class="formacao__titulo">Minha formação</h3>
@@ -331,11 +398,18 @@
         </div>
         <!-- AREAS_ATENDIMENTO: lista repetível — copie uma <li class="area"> para adicionar -->
         <ul class="areas-grid">
-          <li class="area"><svg class="area__icone" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.5-7 10-7 10Z"/></svg><span>Relacionamentos</span></li>
-          <li class="area"><svg class="area__icone" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l2-5 3 9 2-5h7"/></svg><span>Ansiedade</span></li>
-          <li class="area"><svg class="area__icone" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg><span>Depressão</span></li>
-          <li class="area"><svg class="area__icone" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4"/></svg><span>Autoconhecimento</span></li>
-          <li class="area"><svg class="area__icone" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21v-2a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v2"/><circle cx="8" cy="8" r="3"/><path d="M15 11a3 3 0 1 0-1-5.8"/><path d="M21 21v-2a4 4 0 0 0-3-3.8"/></svg><span>Conflitos familiares</span></li>
+          <li class="area"><svg class="area__icone" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19C5 10 10 5 19 5c0 9-5 14-14 14Z"/><path d="M5 19 13 11"/></svg><span>Ansiedade e autocobrança</span></li>
+          <li class="area"><svg class="area__icone" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19C5 10 10 5 19 5c0 9-5 14-14 14Z"/><path d="M5 19 13 11"/></svg><span>Sobrecarga emocional</span></li>
+          <li class="area"><svg class="area__icone" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19C5 10 10 5 19 5c0 9-5 14-14 14Z"/><path d="M5 19 13 11"/></svg><span>Relacionamentos e conflitos afetivos</span></li>
+          <li class="area"><svg class="area__icone" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19C5 10 10 5 19 5c0 9-5 14-14 14Z"/><path d="M5 19 13 11"/></svg><span>Dificuldade de estabelecer limites</span></li>
+          <li class="area"><svg class="area__icone" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19C5 10 10 5 19 5c0 9-5 14-14 14Z"/><path d="M5 19 13 11"/></svg><span>Culpa e necessidade de agradar</span></li>
+          <li class="area"><svg class="area__icone" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19C5 10 10 5 19 5c0 9-5 14-14 14Z"/><path d="M5 19 13 11"/></svg><span>Vida profissional e conflitos relacionados ao trabalho</span></li>
+          <li class="area"><svg class="area__icone" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19C5 10 10 5 19 5c0 9-5 14-14 14Z"/><path d="M5 19 13 11"/></svg><span>Maternidade e identidade</span></li>
+          <li class="area"><svg class="area__icone" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19C5 10 10 5 19 5c0 9-5 14-14 14Z"/><path d="M5 19 13 11"/></svg><span>Conflitos familiares</span></li>
+          <li class="area"><svg class="area__icone" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19C5 10 10 5 19 5c0 9-5 14-14 14Z"/><path d="M5 19 13 11"/></svg><span>Momentos de crise e mudanças de vida</span></li>
+          <li class="area"><svg class="area__icone" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19C5 10 10 5 19 5c0 9-5 14-14 14Z"/><path d="M5 19 13 11"/></svg><span>Tristeza, desânimo e sensação de vazio</span></li>
+          <li class="area"><svg class="area__icone" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19C5 10 10 5 19 5c0 9-5 14-14 14Z"/><path d="M5 19 13 11"/></svg><span>Autoconhecimento e construção da própria identidade</span></li>
+          <li class="area"><svg class="area__icone" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19C5 10 10 5 19 5c0 9-5 14-14 14Z"/><path d="M5 19 13 11"/></svg><span>Desejos, escolhas e padrões que se repetem</span></li>
         </ul>
       </div>
     </section>
@@ -349,27 +423,21 @@
           <h2>Um espaço para pensar, sentir e elaborar.</h2>
           <!-- REFLEXOES_TITULO:fim -->
           <!-- REFLEXOES_APOIO:início -->
-          <p class="apoio">Textos breves sobre questões que atravessam nossa vida emocional e relacional.</p>
+          <p class="apoio">Textos sobre ansiedade, autocobrança, relacionamentos, maternidade, trabalho, identidade e outras questões que atravessam a experiência de ser mulher.</p>
           <!-- REFLEXOES_APOIO:fim -->
         </div>
 
-        <!-- REFLEXOES_CARD_N: cards alinhados aos 3 posts reais -->
+        <!-- REFLEXOES_CARDS: gerados automaticamente — os 3 posts publicados mais recentes,
+             na mesma ordem da página Reflexões. Não é preciso editar aqui ao publicar,
+             renomear ou apagar um post no painel. -->
         <div class="reflexoes__cards">
-          <article class="post-card reveal">
-            <h3>Ansiedade: quando tudo parece urgente</h3>
-            <p>Sobre o tempo acelerado de dentro e o que a escuta pode oferecer a ele.</p>
-            <a class="link-texto" href="reflexoes/posts/ansiedade-quando-tudo-parece-urgente.html">Leia mais</a>
+          {%- for post in collections.posts.slice(0, 3) %}
+          <article class="post-card reveal{% if loop.index > 1 %} reveal--{{ loop.index }}{% endif %}">
+            <h3>{{ post.data.title }}</h3>
+            <p>{{ post.data.resumo or post.data.description }}</p>
+            <a class="link-texto" href="reflexoes/posts/{{ post.fileSlug | urlencode }}.html">Leia mais</a>
           </article>
-          <article class="post-card reveal reveal--2">
-            <h3>Autoestima e o valor que atribuímos a nós</h3>
-            <p>Por que repetimos certas relações e como isso fala da imagem que temos de nós.</p>
-            <a class="link-texto" href="reflexoes/posts/autoestima-e-o-valor-que-atribuimos-a-nos.html">Leia mais</a>
-          </article>
-          <article class="post-card reveal reveal--3">
-            <h3>Adolescência: escutar o que ainda não tem palavra</h3>
-            <p>Um olhar sobre as transformações dessa fase e a importância de um espaço próprio.</p>
-            <a class="link-texto" href="reflexoes/posts/adolescencia-escutar-o-que-ainda-nao-tem-palavra.html">Leia mais</a>
-          </article>
+          {%- endfor %}
         </div>
 
         <div class="centro">
@@ -428,9 +496,9 @@
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 21l2.2-5.3A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8.5 9.5c0 3 2 5 5 5"/></svg>
             WhatsApp <span class="visually-hidden">(19) 99650-4433</span>
           </a>
-          <a class="canal" href="https://instagram.com/giovannagimenez.psicanalise" target="_blank" rel="noopener">
+          <a class="canal" href="https://instagram.com/giovannagimenez.psicanalista" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
-            @giovannagimenez.psicanalise
+            @giovannagimenez.psicanalista
           </a>
           <a class="canal" href="mailto:giovannagimenezpsicanalise@gmail.com">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
@@ -448,8 +516,9 @@
     <div class="container">
       <div class="rodape__grid">
         <div>
-          <p class="rodape__logo">Giovanna Gimenez</p>
-          <p>Psicanálise Clínica · Atendimento online para adolescentes e adultos.</p>
+          <p class="rodape__logo">Giovanna Gimenez | Psicanalista</p>
+          <p>Psicanálise online para mulheres adultas.</p>
+          <p>São Paulo — SP | Atendimento online para todo o Brasil.</p>
           <p class="rodape__tagline">escuta que acolhe, presença que transforma.</p>
         </div>
         <nav aria-label="Navegação do rodapé">
@@ -461,19 +530,21 @@
             <a href="reflexoes/">Reflexões</a>
             <a href="#faq">Perguntas Frequentes</a>
             <a href="#contato">Contato</a>
+            <a href="psicanalise-para-mulheres-adultas/">Psicanálise para mulheres adultas</a>
+            <a href="psicanalise-online-para-mulheres/">Psicanálise online para mulheres</a>
           </div>
         </nav>
         <div>
           <h3>Contato</h3>
           <div class="rodape__nav">
+            <a href="https://instagram.com/giovannagimenez.psicanalista" target="_blank" rel="noopener">@giovannagimenez.psicanalista</a>
             <a href="https://wa.me/5519996504433" target="_blank" rel="noopener">WhatsApp · (19) 99650-4433</a>
             <a href="mailto:giovannagimenezpsicanalise@gmail.com">giovannagimenezpsicanalise@gmail.com</a>
-            <a href="https://instagram.com/giovannagimenez.psicanalise" target="_blank" rel="noopener">@giovannagimenez.psicanalise</a>
           </div>
         </div>
       </div>
 
-      <p class="rodape__frase">A psicanálise não oferece respostas prontas. Ela abre espaço para que você se escute de verdade.</p>
+      <p class="rodape__frase">A psicanálise não oferece respostas prontas. Ela abre espaço para que você possa se escutar de outra maneira.</p>
       <p class="rodape__copy">© <span data-ano>2026</span> Giovanna Gimenez · Psicanálise Clínica. Todos os direitos reservados.</p>
     </div>
   </footer>

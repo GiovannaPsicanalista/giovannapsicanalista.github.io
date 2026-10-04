@@ -7,6 +7,8 @@ em **https://giovannapsicanalista.github.io/**. A **home** é HTML estático; o 
 
 - **Acessível** (WCAG 2.1 AA), **responsivo** (320px → 1440px+) e **otimizado para SEO**.
 - **Blog com painel:** posts em Markdown, publicados por um CMS com login e "Publicar".
+- **Páginas de busca:** "Psicanálise para mulheres adultas" e "Psicanálise online para mulheres",
+  também geradas a partir de Markdown (ver "Páginas institucionais" abaixo).
 
 ---
 
@@ -24,12 +26,15 @@ com fotos, pela interface. Ao publicar, o GitHub Actions gera o site e publica e
 
 ```
 src/                          → FONTE do site (Eleventy gera _site/)
-  index.html                  → Página inicial (estática, todas as seções)
+  index.njk                   → Página inicial (todas as seções; os cards de Reflexões vêm dos posts)
   404.html
-  _includes/base.njk, post.njk→ Modelos (head/header/rodapé e layout do artigo)
+  _includes/base.njk          → Modelo comum (head, cabeçalho e rodapé do blog e das páginas)
+  _includes/post.njk          → Layout do artigo do blog
+  _includes/pagina.njk        → Layout das páginas institucionais
   reflexoes/
     index.njk                 → Listagem do blog (gerada da coleção de posts)
     posts/*.md                → Os textos, em Markdown (editados pelo painel)
+  paginas/*.md                → Páginas institucionais (uma por arquivo; vira /<nome-do-arquivo>/)
   sitemap.njk                 → Sitemap (gerado)
   robots.txt
   assets/                     → css, js, images (+ images/posts = uploads do painel), icons, logo
@@ -57,31 +62,39 @@ Este repositório é o **site de usuária** `giovannapsicanalista.github.io`, se
 
 ## ✏️ Como editar os textos
 
-Todos os textos editáveis da home estão marcados por comentários no `src/index.html`, por exemplo:
+Todos os textos editáveis da home estão marcados por comentários no `src/index.njk` (é um
+arquivo HTML comum; a extensão `.njk` existe só para os cards de Reflexões), por exemplo:
 
 ```html
 <!-- FRASE_HERO:início -->
-<p class="hero__frase">Há histórias que precisam...</p>
+<p class="hero__frase">Um espaço de escuta para compreender...</p>
 <!-- FRASE_HERO:fim -->
 ```
 
 Basta alterar o texto **entre** os comentários. Principais marcadores:
-`FRASE_HERO`, `HERO_APOIO`, `INTRO_P1`, `INTRO_P2`, `SOBRE_TITULO`, `SOBRE_TEXTO`,
-`SOBRE_FORMACAO`, `AREAS_ATENDIMENTO`, `REFLEXOES_TITULO`, `REFLEXOES_APOIO`.
+`FRASE_HERO`, `HERO_SUB`, `INTRO_P1`, `INTRO_P2`, `PARA_QUEM_TITULO`, `PARA_QUEM_TEXTO`,
+`PARA_QUEM_QUESTOES`, `SOBRE_TITULO`, `SOBRE_TEXTO`, `SOBRE_FORMACAO`, `AREAS_ATENDIMENTO`,
+`REFLEXOES_TITULO`, `REFLEXOES_APOIO`.
 
 - **Adicionar um item de formação:** em "Sobre mim", copie uma linha `<li>...</li>`
   dentro de `<ul class="formacao">`.
 - **Adicionar/remover uma área de atendimento:** copie uma `<li class="area">...</li>`
-  dentro de `<ul class="areas-grid">`.
+  dentro de `<ul class="areas-grid">`. A grade fica em 3 colunas no computador; com 12 itens
+  nenhuma linha fica incompleta (9, 12 ou 15 itens fecham certinho).
+- **Adicionar/remover uma questão em "Para quem é a psicanálise?":** copie um bloco
+  `<div class="questao">...</div>` (título em `<dt>`, descrição em `<dd>`).
+- **Cards de "Reflexões" na home:** são montados sozinhos com os 3 posts publicados mais
+  recentes (título, resumo e link). Publicar, renomear ou apagar um post no painel atualiza a
+  home na publicação seguinte — não é preciso editar nada.
 
 ---
 
 ## 📞 Dados de contato e agendamento
 
 Os canais já estão preenchidos com os dados reais (WhatsApp, e-mail e Instagram), na seção de
-contato e no rodapé do `src/index.html` (e nos metadados JSON-LD). O botão **"Agendar"** aponta
+contato e no rodapé do `src/index.njk` (e nos metadados JSON-LD). O botão **"Agendar"** aponta
 para o link oficial de agendamento. Para trocar qualquer um, faça "localizar e substituir" em
-`src/index.html`:
+`src/index.njk` **e** em `src/_includes/base.njk` (rodapé do blog e das páginas institucionais):
 
 | Dado | Onde aparece |
 |------|--------------|
@@ -107,6 +120,20 @@ Não é preciso mexer na listagem nem no sitemap — o Eleventy gera tudo a part
 
 ---
 
+## 📄 Páginas institucionais (busca no Google)
+
+As páginas `/psicanalise-para-mulheres-adultas/` e `/psicanalise-online-para-mulheres/` ficam em
+`src/paginas/`, um arquivo Markdown por página. O nome do arquivo vira o endereço.
+
+- **Editar o texto:** abra o `.md` da página e altere o texto abaixo do cabeçalho (`---`).
+  Linha em branco separa parágrafos; `## Título` cria um subtítulo.
+- **Título e descrição para o Google:** campos `title` e `description` no cabeçalho do arquivo.
+- **Criar outra página:** copie um dos arquivos, renomeie (sem acentos nem espaços, ex.:
+  `psicanalise-e-maternidade.md`) e ajuste `title`, `description`, `ordem` e o texto. Ela entra
+  sozinha no `sitemap.xml`, no rodapé e no bloco "Veja também" das outras páginas.
+
+---
+
 ## 🖼️ Como trocar as fotos
 
 Veja o guia detalhado em [`src/assets/images/README.md`](src/assets/images/README.md). Em resumo:
@@ -127,10 +154,10 @@ e **Lato** (texto).
 (`monograma.png` no cabeçalho). Os favicons/ícones em `src/assets/icons/` são derivados do
 monograma. Tagline: *"escuta que acolhe, presença que transforma."*
 
-> ⚡ **Nota de performance (home):** por velocidade, o `src/index.html` tem um pequeno bloco de
+> ⚡ **Nota de performance (home):** por velocidade, o `src/index.njk` tem um pequeno bloco de
 > **CSS crítico embutido** no `<head>` (um subconjunto de `styles.css` para o topo da página),
 > e a folha completa carrega de forma assíncrona. Se mudar **cores, cabeçalho ou o hero** em
-> `styles.css`, ajuste também esse bloco embutido no `index.html` (há um comentário no local).
+> `styles.css`, ajuste também esse bloco embutido no `index.njk` (há um comentário no local).
 > As demais páginas não têm esse bloco — nelas basta editar o `styles.css`.
 
 ---
@@ -150,7 +177,7 @@ npm run dev       # servidor local (recarrega ao salvar)
 ## 📊 Analytics
 
 O site inclui **Google Analytics (GA4)** em todas as páginas. O identificador de medição fica
-nos snippets `gtag.js` no `<head>` de `src/index.html`, `src/_includes/base.njk` e `src/404.html`.
+nos snippets `gtag.js` no `<head>` de `src/index.njk`, `src/_includes/base.njk` e `src/404.html`.
 
 ---
 

@@ -9,6 +9,13 @@ eleventyExcludeFromCollections: true
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+{%- for p in collections.paginas %}
+  <url>
+    <loc>{{ site.url }}{{ p.url }}</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+{%- endfor %}
   <url>
     <loc>{{ site.url }}/reflexoes/</loc>
     <changefreq>weekly</changefreq>
