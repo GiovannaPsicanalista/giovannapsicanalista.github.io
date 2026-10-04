@@ -8,7 +8,7 @@ backend:
 
 # Onde as imagens enviadas são gravadas (caminho no repositório)
 media_folder: "src/assets/images/posts"
-# Caminho usado nas páginas publicadas (raiz do GitHub Pages — giovannagimenez98.github.io).
+# Caminho usado nas páginas publicadas (raiz do GitHub Pages — giovannapsicanalista.github.io).
 public_folder: "/assets/images/posts"
 
 locale: pt
