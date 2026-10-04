@@ -288,8 +288,7 @@ a:hover { color: var(--cor-oliva); }
 }
 .hero__nome { font-size: var(--fs-md); margin-bottom: 0.25rem; max-width: 30rem; }
 .hero__nome strong { color: var(--cor-oliva); }
-.hero__sub { color: var(--marrom-suave); margin-bottom: 1rem; max-width: 30rem; }
-.hero__apoio { margin-bottom: 1.5rem; max-width: 30rem; }
+.hero__sub { color: var(--marrom-suave); margin-bottom: 1.5rem; max-width: 30rem; }
 .hero__ctas { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem; }
 
 /* 8. SEÇÕES DA HOME ---------------------------------------------------- */
@@ -363,6 +362,43 @@ a:hover { color: var(--cor-oliva); }
 .card h3 { margin-bottom: 0.5rem; }
 .card p { font-size: var(--fs-sm); color: var(--marrom-suave); }
 
+/* Link "saiba mais" ao fim de uma seção (leva às páginas institucionais) */
+.secao__mais { margin-top: 2.5rem; }
+
+/* Para quem é a psicanálise (texto à esquerda + lista de questões à direita) */
+.para-quem__grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+.para-quem__texto h2 { margin-bottom: 1.25rem; }
+.para-quem__texto p { margin-bottom: 1rem; }
+.para-quem__subtitulo {
+  font-family: var(--fonte-corpo);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cor-oliva);
+  line-height: 1.65;                 /* alinha com o selo da coluna ao lado */
+}
+.questao { padding-block: 1.1rem; border-bottom: var(--borda); }
+.questao:last-child { border-bottom: 0; padding-bottom: 0; }
+.questao dt {
+  font-family: var(--fonte-titulo);
+  font-size: var(--fs-md);
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 0.3rem;
+}
+.questao dd { font-size: var(--fs-sm); color: var(--marrom-suave); }
+@media (min-width: 921px) {
+  .para-quem__texto { position: sticky; top: 6.5rem; }  /* acompanha a leitura da lista */
+}
+@media (max-width: 920px) {
+  .para-quem__grid { grid-template-columns: 1fr; }
+}
+
 /* Essência (3 pilares) */
 .essencia__sprig { display: block; width: 46px; height: auto; margin: 0.1rem auto 0.5rem; color: var(--cor-salvia); }
 .essencia .centro h2::after { display: none; }
@@ -370,7 +406,7 @@ a:hover { color: var(--cor-oliva); }
 .pilar { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.55rem; padding: 1.25rem 1rem; }
 .pilar__icone { width: 46px; height: 46px; stroke: var(--cor-oliva); }
 .pilar h3 { letter-spacing: 0.01em; }
-.pilar p { font-size: var(--fs-sm); color: var(--marrom-suave); max-width: 28ch; margin-inline: auto; }
+.pilar p { font-size: var(--fs-sm); color: var(--marrom-suave); max-width: 34ch; margin-inline: auto; }
 
 /* Sobre */
 .sobre__grid {
@@ -388,8 +424,9 @@ a:hover { color: var(--cor-oliva); }
 /* Áreas */
 .areas-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: var(--gap);
+  /* 3 colunas -> 2 -> 1; com 12 itens nenhuma linha fica incompleta */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: clamp(0.75rem, 0.5rem + 1vw, 1.25rem);
   margin-top: 2.5rem;
 }
 .area {
@@ -399,8 +436,8 @@ a:hover { color: var(--cor-oliva); }
   border-radius: var(--raio);
   padding: 1.1rem 1.25rem;
 }
-.area__icone { flex: 0 0 auto; width: 30px; height: 30px; stroke: var(--cor-oliva); }
-.area span { font-weight: 700; font-size: var(--fs-sm); }
+.area__icone { flex: 0 0 auto; width: 26px; height: 26px; stroke: var(--cor-oliva); }
+.area span { font-weight: 700; font-size: var(--fs-sm); line-height: 1.35; }
 
 /* Reflexões (oliva) */
 .reflexoes__cards {
@@ -483,10 +520,11 @@ a:hover { color: var(--cor-oliva); }
   text-align: center;
   color: rgba(246, 242, 235, 0.85);
 }
-.rodape__copy { text-align: center; font-size: var(--fs-xs); color: rgba(246, 242, 235, 0.6); border-top: 1px solid rgba(246,242,235,0.15); padding-top: 1.5rem; }
+.rodape__copy { max-width: none; text-align: center; font-size: var(--fs-xs); color: rgba(246, 242, 235, 0.6); border-top: 1px solid rgba(246,242,235,0.15); padding-top: 1.5rem; }
 
 /* 11. BLOG ------------------------------------------------------------- */
 .blog-hero { padding-block: clamp(3rem, 2rem + 4vw, 5rem); background: var(--cor-bege); }
+.blog-hero h1 + .apoio { margin-top: 0.6rem; }
 .blog-lista { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); margin-top: 2.5rem; }
 .blog-lista .post-card { background: #fff; border: var(--borda); }
 .blog-lista .post-card h3 { color: var(--cor-marrom); }
@@ -509,6 +547,18 @@ a:hover { color: var(--cor-oliva); }
 }
 .artigo__cta h2 { color: var(--cor-marrom); margin-bottom: 0.5rem; }
 .artigo__cta p { margin: 0 auto 1.25rem; }
+
+/* Páginas institucionais (src/paginas) — bloco "Veja também" ao fim do texto */
+.veja-tambem { margin-top: 2.5rem; }
+.veja-tambem__titulo {
+  font-family: var(--fonte-corpo);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cor-oliva);
+  margin-bottom: 1rem;
+}
+.veja-tambem__lista { display: grid; gap: 0.85rem; justify-items: start; }
 
 /* Fotos nos posts do Caderno Clínico (capa, imagens no meio do texto e miniatura no card) */
 .artigo__capa {

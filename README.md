@@ -7,6 +7,8 @@ em **https://giovannapsicanalista.github.io/**. A **home** é HTML estático; o 
 
 - **Acessível** (WCAG 2.1 AA), **responsivo** (320px → 1440px+) e **otimizado para SEO**.
 - **Blog com painel:** posts em Markdown, publicados por um CMS com login e "Publicar".
+- **Páginas de busca:** "Psicanálise para mulheres adultas" e "Psicanálise online para mulheres",
+  também geradas a partir de Markdown (ver "Páginas institucionais" abaixo).
 
 ---
 
@@ -26,10 +28,13 @@ com fotos, pela interface. Ao publicar, o GitHub Actions gera o site e publica e
 src/                          → FONTE do site (Eleventy gera _site/)
   index.html                  → Página inicial (estática, todas as seções)
   404.html
-  _includes/base.njk, post.njk→ Modelos (head/header/rodapé e layout do artigo)
+  _includes/base.njk          → Modelo comum (head, cabeçalho e rodapé do blog e das páginas)
+  _includes/post.njk          → Layout do artigo do blog
+  _includes/pagina.njk        → Layout das páginas institucionais
   reflexoes/
     index.njk                 → Listagem do blog (gerada da coleção de posts)
     posts/*.md                → Os textos, em Markdown (editados pelo painel)
+  paginas/*.md                → Páginas institucionais (uma por arquivo; vira /<nome-do-arquivo>/)
   sitemap.njk                 → Sitemap (gerado)
   robots.txt
   assets/                     → css, js, images (+ images/posts = uploads do painel), icons, logo
@@ -61,18 +66,25 @@ Todos os textos editáveis da home estão marcados por comentários no `src/inde
 
 ```html
 <!-- FRASE_HERO:início -->
-<p class="hero__frase">Há histórias que precisam...</p>
+<p class="hero__frase">Um espaço de escuta para compreender...</p>
 <!-- FRASE_HERO:fim -->
 ```
 
 Basta alterar o texto **entre** os comentários. Principais marcadores:
-`FRASE_HERO`, `HERO_APOIO`, `INTRO_P1`, `INTRO_P2`, `SOBRE_TITULO`, `SOBRE_TEXTO`,
-`SOBRE_FORMACAO`, `AREAS_ATENDIMENTO`, `REFLEXOES_TITULO`, `REFLEXOES_APOIO`.
+`FRASE_HERO`, `HERO_SUB`, `INTRO_P1`, `INTRO_P2`, `PARA_QUEM_TITULO`, `PARA_QUEM_TEXTO`,
+`PARA_QUEM_QUESTOES`, `SOBRE_TITULO`, `SOBRE_TEXTO`, `SOBRE_FORMACAO`, `AREAS_ATENDIMENTO`,
+`REFLEXOES_TITULO`, `REFLEXOES_APOIO`.
 
 - **Adicionar um item de formação:** em "Sobre mim", copie uma linha `<li>...</li>`
   dentro de `<ul class="formacao">`.
 - **Adicionar/remover uma área de atendimento:** copie uma `<li class="area">...</li>`
-  dentro de `<ul class="areas-grid">`.
+  dentro de `<ul class="areas-grid">`. A grade fica em 3 colunas no computador; com 12 itens
+  nenhuma linha fica incompleta (9, 12 ou 15 itens fecham certinho).
+- **Adicionar/remover uma questão em "Para quem é a psicanálise?":** copie um bloco
+  `<div class="questao">...</div>` (título em `<dt>`, descrição em `<dd>`).
+- **Cards de "Reflexões" na home:** os 3 cards são fixos no `src/index.html` e **não** acompanham
+  o painel. Se um post for apagado ou renomeado, atualize o card correspondente (título, resumo
+  e link) para não deixar link quebrado.
 
 ---
 
@@ -81,7 +93,7 @@ Basta alterar o texto **entre** os comentários. Principais marcadores:
 Os canais já estão preenchidos com os dados reais (WhatsApp, e-mail e Instagram), na seção de
 contato e no rodapé do `src/index.html` (e nos metadados JSON-LD). O botão **"Agendar"** aponta
 para o link oficial de agendamento. Para trocar qualquer um, faça "localizar e substituir" em
-`src/index.html`:
+`src/index.html` **e** em `src/_includes/base.njk` (rodapé do blog e das páginas institucionais):
 
 | Dado | Onde aparece |
 |------|--------------|
@@ -104,6 +116,20 @@ e a página do post são gerados automaticamente. Fotos vão para `src/assets/im
 com o front matter (`title`, `date`, `description`, `resumo`, `tempoLeitura`, opcional
 `cover`) e o texto em Markdown. O nome do arquivo vira a URL (`/reflexoes/posts/<slug>.html`).
 Não é preciso mexer na listagem nem no sitemap — o Eleventy gera tudo a partir da pasta.
+
+---
+
+## 📄 Páginas institucionais (busca no Google)
+
+As páginas `/psicanalise-para-mulheres-adultas/` e `/psicanalise-online-para-mulheres/` ficam em
+`src/paginas/`, um arquivo Markdown por página. O nome do arquivo vira o endereço.
+
+- **Editar o texto:** abra o `.md` da página e altere o texto abaixo do cabeçalho (`---`).
+  Linha em branco separa parágrafos; `## Título` cria um subtítulo.
+- **Título e descrição para o Google:** campos `title` e `description` no cabeçalho do arquivo.
+- **Criar outra página:** copie um dos arquivos, renomeie (sem acentos nem espaços, ex.:
+  `psicanalise-e-maternidade.md`) e ajuste `title`, `description`, `ordem` e o texto. Ela entra
+  sozinha no `sitemap.xml`, no rodapé e no bloco "Veja também" das outras páginas.
 
 ---
 

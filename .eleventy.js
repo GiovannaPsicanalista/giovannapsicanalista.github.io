@@ -16,6 +16,11 @@ module.exports = function (eleventyConfig) {
       .sort((a, b) => b.date - a.date)
   );
 
+  // Páginas institucionais (src/paginas/*.md), na ordem definida em cada arquivo (`ordem`).
+  eleventyConfig.addCollection("paginas", (api) =>
+    api.getFilteredByTag("pagina").sort((a, b) => (a.data.ordem || 0) - (b.data.ordem || 0))
+  );
+
   // Filtros de data (pt-BR).
   const meses = ["janeiro","fevereiro","março","abril","maio","junho",
     "julho","agosto","setembro","outubro","novembro","dezembro"];
